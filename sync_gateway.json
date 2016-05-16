@@ -1,0 +1,18 @@
+{ 
+    "interface":":4984", 
+    "adminInterface":":4985", 
+    "log":["REST"], 
+    "databases":{ 
+       "sensor":{ 
+          "server":"52.67.20.14:8091", 
+          "bucket":"sensor", 
+          "sync":`function(doc) {channel(doc.channels);}`,
+          "users": {
+                "GUEST": {
+                    "disabled": false,
+                    "admin_channels": ["*"]
+                }
+            }
+      } 
+   } 
+ }
