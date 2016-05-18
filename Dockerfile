@@ -14,12 +14,12 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 # Add configurations
 ENV PATH /opt/couchbase-sync-gateway/bin:$PATH
-ADD sync_gateway.json /opt/couchbase-sync-gateway/bin/sync_gateway.json
-#RUN chmod +x /*.sh
+ADD run.sh /run.sh
+RUN chmod +x /*.sh
 ##################### INSTALLATION END #####################
 
 # Documentation http://developer.couchbase.com/mobile/develop/guides/sync-gateway/index.html
 EXPOSE 4984 4985
-WORKDIR /opt/couchbase-sync-gateway/bin
-#ENTRYPOINT ["/run.sh"]
-CMD ["/opt/couchbase-sync-gateway/bin/sync_gateway","/opt/couchbase-sync-gateway/bin/sync_gateway.json"]
+WORKDIR /opt/couchbase-sync-gateway
+ENTRYPOINT ["/run.sh"]
+CMD []
