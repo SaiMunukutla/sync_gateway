@@ -23,4 +23,4 @@ EXPOSE 4984 4985
 WORKDIR /opt/couchbase-sync-gateway
 ENTRYPOINT ["/run.sh"]
 CMD []
-
+VOLUME /workspace
